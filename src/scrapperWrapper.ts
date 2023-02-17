@@ -41,7 +41,7 @@ export class ScrapperWrapper {
 
     const instance = wrapper(
       axios.create({
-        baseURL: "https://suap.ifrn.edu.br",
+        baseURL: this.urlBase,
         headers: {
           Host: this.urlBase,
           Origin: this.urlBase,
