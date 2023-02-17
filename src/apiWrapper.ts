@@ -19,7 +19,9 @@ export class ApiWrapper {
       headers: {
         "Content-Type": "application/json"
       }
-    })
+    });
+
+    console.log(`${this.urlBase}/api/v2`);
   }
 
   loginWithToken(token: string) {
