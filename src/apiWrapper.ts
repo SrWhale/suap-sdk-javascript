@@ -20,8 +20,6 @@ export class ApiWrapper {
         "Content-Type": "application/json"
       }
     });
-
-    console.log(`${this.urlBase}/api/v2`);
   }
 
   loginWithToken(token: string) {
@@ -36,7 +34,11 @@ export class ApiWrapper {
         username: matriculation,
         password
       }
-    )
+    ).catch(err => {
+      console.log(err, matriculation, password);
+      return err;
+    });
+
     this.token = response.data.token
     this.instance.defaults.headers.common.Authorization = `JWT ${this.token}`
   }
